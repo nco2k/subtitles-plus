@@ -30,6 +30,7 @@ public class BlacklistScreen extends Screen {
     private final List<String> allSuggestions = new ArrayList<>();
     private List<String> filteredSuggestions = new ArrayList<>();
     private int selectedSuggestion = -1;
+    private int suggestionScrollOffset = 0;
 
     private static final int ENTRY_HEIGHT = 22;
     private static final int LIST_TOP = 35;
@@ -66,10 +67,10 @@ public class BlacklistScreen extends Screen {
             filteredSuggestions = allSuggestions.stream()
                     .filter(s -> s.toLowerCase().contains(query))
                     .filter(s -> !config.blacklist.contains(s))
-                    .limit(MAX_SUGGESTIONS)
                     .collect(Collectors.toList());
         }
         selectedSuggestion = -1;
+        suggestionScrollOffset = 0;
     }
 
     @Override
@@ -113,6 +114,7 @@ public class BlacklistScreen extends Screen {
             inputField.setValue("");
             filteredSuggestions = new ArrayList<>();
             selectedSuggestion = -1;
+            suggestionScrollOffset = 0;
             this.rebuildWidgets();
         }
     }
@@ -124,6 +126,7 @@ public class BlacklistScreen extends Screen {
             inputField.setValue("");
             filteredSuggestions = new ArrayList<>();
             selectedSuggestion = -1;
+            suggestionScrollOffset = 0;
             this.rebuildWidgets();
         }
     }
@@ -176,22 +179,37 @@ public class BlacklistScreen extends Screen {
 
         // --- SUGGESTIONS ---
         if (!filteredSuggestions.isEmpty()) {
+            int visibleCount = Math.min(MAX_SUGGESTIONS, filteredSuggestions.size());
             int suggBoxX = this.width / 2 - 100;
-            int suggBoxY = this.height - 55 - (filteredSuggestions.size() * SUGGESTION_HEIGHT) - 4;
+            int suggBoxY = this.height - 55 - (visibleCount * SUGGESTION_HEIGHT) - 4;
             int suggBoxW = 180;
+            boolean hasScrollbar = filteredSuggestions.size() > MAX_SUGGESTIONS;
+            int scrollbarX = suggBoxX + suggBoxW - 2;
 
             // Suggestion box background
             context.fill(suggBoxX, suggBoxY, suggBoxX + suggBoxW, this.height - 55 - 2, 0xFF222222);
             context.fill(suggBoxX, suggBoxY, suggBoxX + suggBoxW, suggBoxY + 1, 0xFFAAAAAA); // top border
 
-            for (int i = 0; i < filteredSuggestions.size(); i++) {
+            for (int i = 0; i < visibleCount; i++) {
+                int actualIndex = i + suggestionScrollOffset;
+                if (actualIndex >= filteredSuggestions.size()) break;
                 int sy = suggBoxY + i * SUGGESTION_HEIGHT + 2;
                 boolean hovered = mouseX >= suggBoxX && mouseX <= suggBoxX + suggBoxW && mouseY >= sy && mouseY <= sy + SUGGESTION_HEIGHT;
-                boolean selected = i == selectedSuggestion;
+                boolean selected = actualIndex == selectedSuggestion;
                 if (hovered || selected) {
                     context.fill(suggBoxX, sy, suggBoxX + suggBoxW, sy + SUGGESTION_HEIGHT, 0xFF444444);
                 }
-                context.text(this.font, filteredSuggestions.get(i), suggBoxX + 3, sy + 2, hovered || selected ? 0xFFFFFF00 : 0xFFCCCCCC);
+                context.text(this.font, filteredSuggestions.get(actualIndex), suggBoxX + 3, sy + 2, hovered || selected ? 0xFFFFFF00 : 0xFFCCCCCC);
+            }
+
+            // Suggestion scrollbar
+            if (hasScrollbar) {
+                int sbHeight = visibleCount * SUGGESTION_HEIGHT;
+                int thumbH = Math.max(8, sbHeight * visibleCount / filteredSuggestions.size());
+                int maxSuggScroll = Math.max(1, filteredSuggestions.size() - visibleCount);
+                int thumbY = suggBoxY + 2 + (sbHeight - thumbH) * suggestionScrollOffset / maxSuggScroll;
+                context.fill(scrollbarX, suggBoxY + 2, scrollbarX + 2, suggBoxY + 2 + sbHeight, 0x55FFFFFF);
+                context.fill(scrollbarX, thumbY, scrollbarX + 2, thumbY + thumbH, 0xFFFFFFFF);
             }
         }
     }
@@ -200,15 +218,18 @@ public class BlacklistScreen extends Screen {
     public boolean mouseClicked(@NotNull net.minecraft.client.input.MouseButtonEvent event, boolean doubleClick) {
         // Check if clicking on a suggestion
         if (!filteredSuggestions.isEmpty()) {
+            int visibleCount = Math.min(MAX_SUGGESTIONS, filteredSuggestions.size());
             int suggBoxX = this.width / 2 - 100;
-            int suggBoxY = this.height - 55 - (filteredSuggestions.size() * SUGGESTION_HEIGHT) - 4;
+            int suggBoxY = this.height - 55 - (visibleCount * SUGGESTION_HEIGHT) - 4;
             int suggBoxW = 180;
             double mx = event.x(), my = event.y();
 
-            for (int i = 0; i < filteredSuggestions.size(); i++) {
+            for (int i = 0; i < visibleCount; i++) {
+                int actualIndex = i + suggestionScrollOffset;
+                if (actualIndex >= filteredSuggestions.size()) break;
                 int sy = suggBoxY + i * SUGGESTION_HEIGHT + 2;
                 if (mx >= suggBoxX && mx <= suggBoxX + suggBoxW && my >= sy && my <= sy + SUGGESTION_HEIGHT) {
-                    addSuggestion(filteredSuggestions.get(i));
+                    addSuggestion(filteredSuggestions.get(actualIndex));
                     return true;
                 }
             }
@@ -220,6 +241,22 @@ public class BlacklistScreen extends Screen {
     public boolean mouseScrolled(double x, double y, double scrollX, double scrollY) {
         int listBottom = this.height - LIST_BOTTOM_MARGIN;
         int visibleEntries = (listBottom - LIST_TOP) / ENTRY_HEIGHT;
+
+        // If hovering over suggestion box, scroll suggestions
+        if (!filteredSuggestions.isEmpty()) {
+            int visibleCount = Math.min(MAX_SUGGESTIONS, filteredSuggestions.size());
+            int suggBoxX = this.width / 2 - 100;
+            int suggBoxY = this.height - 55 - (visibleCount * SUGGESTION_HEIGHT) - 4;
+            int suggBoxW = 180;
+            int suggBoxBottom = this.height - 55 - 2;
+            if (x >= suggBoxX && x <= suggBoxX + suggBoxW && y >= suggBoxY && y <= suggBoxBottom) {
+                int maxSuggScroll = Math.max(0, filteredSuggestions.size() - MAX_SUGGESTIONS);
+                suggestionScrollOffset = Mth.clamp((int)(suggestionScrollOffset - scrollY), 0, maxSuggScroll);
+                return true;
+            }
+        }
+
+        // Otherwise scroll the main blacklist
         int maxScroll = Math.max(0, config.blacklist.size() - visibleEntries);
         scrollOffset = Mth.clamp((int)(scrollOffset - scrollY), 0, maxScroll);
         this.rebuildWidgets();
@@ -240,10 +277,14 @@ public class BlacklistScreen extends Screen {
         // Arrow up/down to navigate suggestions
         if (event.key() == 265 && !filteredSuggestions.isEmpty()) { // up
             selectedSuggestion = Math.max(0, selectedSuggestion - 1);
+            // Keep selected in view
+            if (selectedSuggestion < suggestionScrollOffset) suggestionScrollOffset = selectedSuggestion;
             return true;
         }
         if (event.key() == 264 && !filteredSuggestions.isEmpty()) { // down
             selectedSuggestion = Math.min(filteredSuggestions.size() - 1, selectedSuggestion + 1);
+            // Keep selected in view
+            if (selectedSuggestion >= suggestionScrollOffset + MAX_SUGGESTIONS) suggestionScrollOffset = selectedSuggestion - MAX_SUGGESTIONS + 1;
             return true;
         }
         return super.keyPressed(event);
