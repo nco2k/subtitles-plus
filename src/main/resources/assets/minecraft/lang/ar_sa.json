@@ -974,6 +974,41 @@
   "subtitles.ui.stonecutter.take_result": "\u00A78استخدام قاطع الحجر",
   "subtitles.weather.end_flash": "\u00A75§f\uE504§6\u00A7r زمجرة وميض النهاية",
   "subtitles.weather.rain": "\u00A78§f\uE505§6 هطول المطر",
+
+
+  "subtitles.entity.baby_chicken.ambient": "§f\uE513§6 الكتكوت يصفر",
+  "subtitles.entity.baby_chicken.death": "§f\uE513§6 الكتكوت يموت",
+  "subtitles.entity.baby_chicken.hurts": "§f\uE513§6 الكتكوت يتألم",
+  "subtitles.entity.baby_wolf.ambient": "§f\uE514§6 الجرو ينبح",
+  "subtitles.entity.baby_wolf.death": "§f\uE514§6 الجرو يموت",
+  "subtitles.entity.baby_wolf.growl": "§f\uE514§6 الجرو يزمجر",
+  "subtitles.entity.baby_wolf.hurt": "§f\uE514§6 الجرو يتألم",
+  "subtitles.entity.baby_wolf.pant": "§f\uE514§6 الجرو يلهث",
+  "subtitles.entity.baby_wolf.whine": "§f\uE514§6 الجرو يأنّ",
+  "subtitles.entity.baby_pig.ambient": "§f\uE515§6 الخنزير الصغير يأكأك",
+  "subtitles.entity.baby_pig.death": "§f\uE515§6 الخنزير الصغير يموت",
+  "subtitles.entity.baby_pig.eat": "§f\uE515§6 الخنزير الصغير يأكل",
+  "subtitles.entity.baby_pig.hurt": "§f\uE515§6 الخنزير الصغير يتألم",
+  "subtitles.entity.pig.eat": "§f\uE021§6 الخنزير يأكل",
+  "subtitles.entity.baby_cat.ambient": "§f\uE516§6 القطة الصغيرة تموء",
+  "subtitles.entity.baby_cat.beg_for_food": "§f\uE516§6 القطة الصغيرة تتوسل",
+  "subtitles.entity.baby_cat.death": "§f\uE516§6 القطة الصغيرة تموت",
+  "subtitles.entity.baby_cat.eat": "§f\uE516§6 القطة الصغيرة تأكل",
+  "subtitles.entity.baby_cat.hiss": "§f\uE516§6 القطة الصغيرة تفحّ",
+  "subtitles.entity.baby_cat.hurt": "§f\uE516§6 القطة الصغيرة تتألم",
+  "subtitles.entity.baby_cat.purr": "§f\uE516§6 القطة الصغيرة تموء بهدوء",
+  "subtitles.entity.baby_horse.ambient": "§f\uE517§6 المهر يصهل",
+  "subtitles.entity.baby_horse.angry": "§f\uE517§6 المهر يصهل",
+  "subtitles.entity.baby_horse.breathe": "§f\uE517§6 المهر يتنفس",
+  "subtitles.entity.baby_horse.death": "§f\uE517§6 المهر يموت",
+  "subtitles.entity.baby_horse.eat": "§f\uE517§6 المهر يأكل",
+  "subtitles.entity.baby_horse.hurt": "§f\uE517§6 المهر يتألم",
+  "subtitles.entity.baby_horse.land": "§f\uE517§6 المهر يهبط",
+  "subtitles.item.golden_dandelion.use": "§f\uE518§6 الهندباء الذهبية توقف الشيخوخة",
+  "subtitles.item.golden_dandelion.unuse": "§f\uE518§6 الهندباء الذهبية تبدأ الشيخوخة",
+
+
+
   "creator.name": "ثامستيكال مارف",
   "credit.helper": "جيكوب ذا جيمر071، سايكو هيد جاي - اكتشفوا الأخطاء"
 }

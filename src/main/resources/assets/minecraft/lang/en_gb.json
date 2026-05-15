@@ -972,6 +972,41 @@
 	"subtitles.ui.stonecutter.take_result": "\u00A78Stonecutter used",
 	"subtitles.weather.end_flash": "\u00A75§f\uE504§6\u00A7r End Flash rumbles",
 	"subtitles.weather.rain": "\u00A78§f\uE505§6 Rain falls",
+
+
+	"subtitles.entity.baby_chicken.ambient": "§f\uE513§6 Chick peeps",
+	"subtitles.entity.baby_chicken.death": "§f\uE513§6 Chick dies",
+	"subtitles.entity.baby_chicken.hurts": "§f\uE513§6 Chick hurts",
+	"subtitles.entity.baby_wolf.ambient": "§f\uE514§6 Puppy yips",
+	"subtitles.entity.baby_wolf.death": "§f\uE514§6 Puppy dies",
+	"subtitles.entity.baby_wolf.growl": "§f\uE514§6 Puppy growls",
+	"subtitles.entity.baby_wolf.hurt": "§f\uE514§6 Puppy hurts",
+	"subtitles.entity.baby_wolf.pant": "§f\uE514§6 Puppy pants",
+	"subtitles.entity.baby_wolf.whine": "§f\uE514§6 Puppy whines",
+	"subtitles.entity.baby_pig.ambient": "§f\uE515§6 Baby Pig oinks",
+	"subtitles.entity.baby_pig.death": "§f\uE515§6 Baby Pig dies",
+	"subtitles.entity.baby_pig.eat": "§f\uE515§6 Baby Pig eats",
+	"subtitles.entity.baby_pig.hurt": "§f\uE515§6 Baby Pig hurts",
+	"subtitles.entity.pig.eat": "§f\uE021§6 Pig eats",
+	"subtitles.entity.baby_cat.ambient": "§f\uE516§6 Kitten meows",
+	"subtitles.entity.baby_cat.beg_for_food": "§f\uE516§6 Kitten begs",
+	"subtitles.entity.baby_cat.death": "§f\uE516§6 Kitten dies",
+	"subtitles.entity.baby_cat.eat": "§f\uE516§6 Kitten eats",
+	"subtitles.entity.baby_cat.hiss": "§f\uE516§6 Kitten hisses",
+	"subtitles.entity.baby_cat.hurt": "§f\uE516§6 Kitten hurts",
+	"subtitles.entity.baby_cat.purr": "§f\uE516§6 Kitten purrs",
+	"subtitles.entity.baby_horse.ambient": "§f\uE517§6 Foal neighs",
+	"subtitles.entity.baby_horse.angry": "§f\uE517§6 Foal neighs",
+	"subtitles.entity.baby_horse.breathe": "§f\uE517§6 Foal breathes",
+	"subtitles.entity.baby_horse.death": "§f\uE517§6 Foal dies",
+	"subtitles.entity.baby_horse.eat": "§f\uE517§6 Foal eats",
+	"subtitles.entity.baby_horse.hurt": "§f\uE517§6 Foal hurts",
+	"subtitles.entity.baby_horse.land": "§f\uE517§6 Foal lands",
+	"subtitles.item.golden_dandelion.use": "§f\uE518§6 Golden Dandelion halts aging",
+	"subtitles.item.golden_dandelion.unuse": "§f\uE518§6 Golden Dandelion starts aging",
+
+
+
 	"creator.name": "ThaMysticalMarv",
 	"credit.helper": "jacobthegamer071, PsychoHeadGuy - discovered mistakes"
 }

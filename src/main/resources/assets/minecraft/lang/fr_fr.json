@@ -974,6 +974,41 @@
   "subtitles.ui.stonecutter.take_result": "\u00A78Tailleur de pierre utilisé",
   "subtitles.weather.end_flash": "\u00A75§f\uE504§6\u00A7r Flash de l'End gronde",
   "subtitles.weather.rain": "\u00A78§f\uE505§6 Pluie tombe",
+
+
+  "subtitles.entity.baby_chicken.ambient": "§f\uE513§6 Poussin piaille",
+  "subtitles.entity.baby_chicken.death": "§f\uE513§6 Poussin meurt",
+  "subtitles.entity.baby_chicken.hurts": "§f\uE513§6 Poussin est blessé",
+  "subtitles.entity.baby_wolf.ambient": "§f\uE514§6 Chiot aboie",
+  "subtitles.entity.baby_wolf.death": "§f\uE514§6 Chiot meurt",
+  "subtitles.entity.baby_wolf.growl": "§f\uE514§6 Chiot grogne",
+  "subtitles.entity.baby_wolf.hurt": "§f\uE514§6 Chiot est blessé",
+  "subtitles.entity.baby_wolf.pant": "§f\uE514§6 Chiot halète",
+  "subtitles.entity.baby_wolf.whine": "§f\uE514§6 Chiot gémit",
+  "subtitles.entity.baby_pig.ambient": "§f\uE515§6 Porcelet grogne",
+  "subtitles.entity.baby_pig.death": "§f\uE515§6 Porcelet meurt",
+  "subtitles.entity.baby_pig.eat": "§f\uE515§6 Porcelet mange",
+  "subtitles.entity.baby_pig.hurt": "§f\uE515§6 Porcelet est blessé",
+  "subtitles.entity.pig.eat": "§f\uE021§6 Cochon mange",
+  "subtitles.entity.baby_cat.ambient": "§f\uE516§6 Chaton miaule",
+  "subtitles.entity.baby_cat.beg_for_food": "§f\uE516§6 Chaton supplie",
+  "subtitles.entity.baby_cat.death": "§f\uE516§6 Chaton meurt",
+  "subtitles.entity.baby_cat.eat": "§f\uE516§6 Chaton mange",
+  "subtitles.entity.baby_cat.hiss": "§f\uE516§6 Chaton siffle",
+  "subtitles.entity.baby_cat.hurt": "§f\uE516§6 Chaton est blessé",
+  "subtitles.entity.baby_cat.purr": "§f\uE516§6 Chaton ronronne",
+  "subtitles.entity.baby_horse.ambient": "§f\uE517§6 Poulain hennit",
+  "subtitles.entity.baby_horse.angry": "§f\uE517§6 Poulain hennit",
+  "subtitles.entity.baby_horse.breathe": "§f\uE517§6 Poulain respire",
+  "subtitles.entity.baby_horse.death": "§f\uE517§6 Poulain meurt",
+  "subtitles.entity.baby_horse.eat": "§f\uE517§6 Poulain mange",
+  "subtitles.entity.baby_horse.hurt": "§f\uE517§6 Poulain est blessé",
+  "subtitles.entity.baby_horse.land": "§f\uE517§6 Poulain atterrit",
+  "subtitles.item.golden_dandelion.use": "§f\uE518§6 Pissenlit doré arrête le vieillissement",
+  "subtitles.item.golden_dandelion.unuse": "§f\uE518§6 Pissenlit doré démarre le vieillissement",
+
+
+
   "creator.name": "ThaMysticalMarv",
   "credit.helper": "jacobthegamer071, PsychoHeadGuy - découvert des erreurs"
 

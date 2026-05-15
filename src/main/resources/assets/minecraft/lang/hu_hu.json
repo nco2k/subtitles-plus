@@ -973,6 +973,41 @@
   "subtitles.ui.stonecutter.take_result": "\u00A78Kővágó használva",
   "subtitles.weather.end_flash": "\u00A75§f\uE504§6\u00A7r Végi villanás dörren",
   "subtitles.weather.rain": "\u00A78§f\uE505§6 Eső esik",
+
+
+  "subtitles.entity.baby_chicken.ambient": "§f\uE513§6 Csibe csipog",
+  "subtitles.entity.baby_chicken.death": "§f\uE513§6 Csibe meghal",
+  "subtitles.entity.baby_chicken.hurts": "§f\uE513§6 Csibe megsérül",
+  "subtitles.entity.baby_wolf.ambient": "§f\uE514§6 Kölyökkutya ugat",
+  "subtitles.entity.baby_wolf.death": "§f\uE514§6 Kölyökkutya meghal",
+  "subtitles.entity.baby_wolf.growl": "§f\uE514§6 Kölyökkutya morog",
+  "subtitles.entity.baby_wolf.hurt": "§f\uE514§6 Kölyökkutya megsérül",
+  "subtitles.entity.baby_wolf.pant": "§f\uE514§6 Kölyökkutya liheg",
+  "subtitles.entity.baby_wolf.whine": "§f\uE514§6 Kölyökkutya nyüszít",
+  "subtitles.entity.baby_pig.ambient": "§f\uE515§6 Malac röfög",
+  "subtitles.entity.baby_pig.death": "§f\uE515§6 Malac meghal",
+  "subtitles.entity.baby_pig.eat": "§f\uE515§6 Malac eszik",
+  "subtitles.entity.baby_pig.hurt": "§f\uE515§6 Malac megsérül",
+  "subtitles.entity.pig.eat": "§f\uE021§6 Disznó eszik",
+  "subtitles.entity.baby_cat.ambient": "§f\uE516§6 Cicakölyök nyávog",
+  "subtitles.entity.baby_cat.beg_for_food": "§f\uE516§6 Cicakölyök kéreget",
+  "subtitles.entity.baby_cat.death": "§f\uE516§6 Cicakölyök meghal",
+  "subtitles.entity.baby_cat.eat": "§f\uE516§6 Cicakölyök eszik",
+  "subtitles.entity.baby_cat.hiss": "§f\uE516§6 Cicakölyök sziszeg",
+  "subtitles.entity.baby_cat.hurt": "§f\uE516§6 Cicakölyök megsérül",
+  "subtitles.entity.baby_cat.purr": "§f\uE516§6 Cicakölyök dorombol",
+  "subtitles.entity.baby_horse.ambient": "§f\uE517§6 Csikó nyerít",
+  "subtitles.entity.baby_horse.angry": "§f\uE517§6 Csikó nyerít",
+  "subtitles.entity.baby_horse.breathe": "§f\uE517§6 Csikó lélegzik",
+  "subtitles.entity.baby_horse.death": "§f\uE517§6 Csikó meghal",
+  "subtitles.entity.baby_horse.eat": "§f\uE517§6 Csikó eszik",
+  "subtitles.entity.baby_horse.hurt": "§f\uE517§6 Csikó megsérül",
+  "subtitles.entity.baby_horse.land": "§f\uE517§6 Csikó leszáll",
+  "subtitles.item.golden_dandelion.use": "§f\uE518§6 Arany pitypang megállítja az öregedést",
+  "subtitles.item.golden_dandelion.unuse": "§f\uE518§6 Arany pitypang elindítja az öregedést",
+
+
+
   "creator.name": "ThaMysticalMarv",
   "credit.helper": "jacobthegamer071, PsychoHeadGuy - hibák felfedezése"
 }
