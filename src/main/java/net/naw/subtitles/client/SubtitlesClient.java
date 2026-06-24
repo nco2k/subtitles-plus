@@ -42,20 +42,16 @@ public class SubtitlesClient implements ClientModInitializer {
 
             // Toggle subtitle visibility
             while (toggleKey.consumeClick()) {
-                if (!(Boolean)client.options.showSubtitles().get()) {
-                    if (client.player != null)
-                        client.player.sendSystemMessage(Component.literal("§eEnable Closed Captions in Music & Sounds first!"));
-                    continue;
-                }
-                SubtitleConfig.INSTANCE.renderSubtitles = !SubtitleConfig.INSTANCE.renderSubtitles;
-                SubtitleConfig.INSTANCE.save();
+                boolean active = !client.options.showSubtitles().get();
+                client.options.showSubtitles().set(active);
+                client.options.save();
 
-                // Feedback message for the player
-                if (client.player != null) {
-                    Component status = SubtitleConfig.INSTANCE.renderSubtitles ?
-                            Component.literal("§aSubtitles Shown") : Component.literal("§cSubtitles Hidden");
-                    client.player.sendSystemMessage(status);
-                }
+				// Feedback message for the player
+                Component status = active
+                        ? Component.literal("Subtitles: §aON")
+                        : Component.literal("Subtitles: §cOFF");
+
+                client.gui.setOverlayMessage(status, false);
             }
         });
     }

@@ -63,7 +63,6 @@ public abstract class SubtitlesMixin {
         ci.cancel();
         SubtitleConfig config = SubtitleConfig.INSTANCE;
 
-        if (!config.renderSubtitles) return;
         if (!(Boolean)this.minecraft.options.showSubtitles().get()) return;
 
         // Transform handles where the player is looking (important for the arrows!)

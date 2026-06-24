@@ -55,7 +55,6 @@ public class SubtitleConfig {
     // --- FEATURE TOGGLES ---
     // Controls which features are active: colors, icons, preview, guides, alignment, etc.
     public boolean useCategoryColors = true;
-    public boolean renderSubtitles = true;
     public boolean showGuides = true;
     public boolean showIcons = true;
     public int previewMode = 2; // 0: OFF, 1: Outline+Labels only, 2: Full preview
